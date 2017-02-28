@@ -1,9 +1,4 @@
-[![Build Status](https://travis-ci.org/linnovate/mean.svg)](https://travis-ci.org/linnovate/mean)
-[![Dependencies Status](https://david-dm.org/linnovate/mean.svg)](https://david-dm.org/linnovate/mean)
-[![Gitter](https://badges.gitter.im/JoinChat.svg)](https://gitter.im/linnovate/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-[![Known Vulnerabilities](https://snyk.io/test/github/linnovate/mean/badge.svg)](https://snyk.io/test/github/linnovate/mean)
-
-# [![MEAN Logo](http://mean.io/wp-content/themes/twentysixteen-child/images/meanlogo.png)](http://mean.io/) MEAN Stack
+# MEAN Stack - Login
 
 MEAN is a framework for an easy starting point with [MongoDB](https://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](https://angularjs.org/) based applications. It is designed to give you a quick and organized way to start developing MEAN based web apps with useful modules like Mongoose and Passport pre-bundled and configured. We mainly try to take care of the connection points between existing popular frameworks and solve common integration problems.
 
@@ -79,150 +74,6 @@ $ export PORT=3001 && gulp
 Then, open a browser and change the port number before you visit:
 ```bash
   http://localhost:3001
-```
-
-### Troubleshooting
-During installation depending on your os and prerequisite versions you may encounter some issues.
-
-Most issues can be solved by one of the following tips, but if you are unable to find a solution feel free to contact us via the repository issue tracker or the links provided below.
-
-#### Update NPM, Bower or Gulp
-Sometimes you may find there is a weird error during install like npm's *Error: ENOENT*. Usually updating those tools to the latest version solves the issue.
-
-* Updating NPM:
-```bash
-$ npm update -g npm
-```
-
-* Updating Gulp:
-```bash
-$ npm update -g gulp
-```
-
-* Updating Bower:
-```bash
-$ npm update -g bower
-```
-
-#### Cleaning NPM and Bower cache
-NPM and Bower has a caching system for holding packages that you already installed.
-We found that often cleaning the cache solves some troubles this system creates.
-
-* NPM Clean Cache:
-```bash
-$ npm cache clean
-```
-
-* Bower Clean Cache:
-```bash
-$ bower cache clean
-```
-
-#### Installation problems on Windows 8 / 8.1
-Some of Mean.io dependencies uses [node-gyp](https://github.com/nodejs/node-gyp) with supported Python version 2.7.x. So if you see an error related to node-gyp rebuild follow next steps:
-
-1. install [Python 2.7.x](https://www.python.org/downloads/)
-2. install [Microsoft Visual Studio C++ 2012 Express](http://www.microsoft.com/en-us/download/details.aspx?id=34673)
-3. Run NPM update
-
-```bash
-$ npm update -g
-```
-
-#### Git "not found" on Windows
-If you get this error when trying to `mean init`:
-
-```text
-Prerequisite not installed: git
-```
-
-And you definitely have Git for Windows installed, then it's not included in your path. Find the folder containing git.exe (likely `C:\Program Files (x86)\Git\cmd`) and add it to your PATH.
-
-## Technologies
-
-### The MEAN stack
-
-MEAN is an acronym for *M*ongo, *E*xpress.js , *A*ngular.js and *N*ode.js
-
-<dl class="dl-horizontal">
-<dt>MongoDB</dt>
-<dd>Go through <a href="https://www.mongodb.com/">MongoDB Official Website</a> and proceed to its <a href="https://docs.mongodb.com/manual">Great Manual</a>, which should help you understand NoSQL and MongoDB better.</dd>
-<dt>Express</dt>
-<dd>The best way to understand express is through its <a href="http://expressjs.com/">Official Website</a>, particularly <a href="http://expressjs.com/">The Express Guide</a>; you can also go through <a href="http://stackoverflow.com/q/8144214/6115857">this StackOverflow thread</a> for more resources.</dd>
-<dt>AngularJS</dt>
-<dd>Angular's Official Website is a great starting point. CodeSchool and google created a <a href="https://www.codeschool.com/courses/shaping-up-with-angular-js">great tutorial</a> for beginners, and the angular videos by <a href="https://egghead.io/">Egghead</a>.</dd>
-<dt>Node.js</dt>
-<dd>Start by going through <a href="https://nodejs.org">Node.js Official Website</a> and the <a href="https://nodejs.org/en/docs/">documentation page</a> as well as <a href="http://stackoverflow.com/q/2353818/6115857">this StackOverflow thread</a>, which should get you going with the Node.js platform in no time.</dd>
-</dl>
-
-### Additional Tools
-* <a href="http://mongoosejs.com/">Mongoose</a> - The mongodb node.js driver in charge of providing elegant mongodb object modeling for node.js
-* <a href="http://passportjs.org/">Passport</a> - An authentication middleware for Node.js which supports authentication using a username and password, Facebook, Twitter, and more.
-* <a href="http://getbootstrap.com/">Twitter Bootstrap</a> - The most popular HTML, CSS, and JS framework for developing responsive, mobile first projects.
-* <a href="http://angular-ui.github.io/bootstrap/">UI Bootstrap</a> - Bootstrap components written in pure AngularJS
-
-
-## CLI
-### Overview
-
-The MEAN CLI is a simple Command Line Interface for installing and managing MEAN applications. As a core module of the Mean.io project, it provides a number of useful tools to make interaction with your MEAN application easier, with features such as: scaffolding, module creation and admin, status checks, and user management.
-```bash
-$ mean
-$ mean --help
-$ mean help
-```
-  <code>mean help</code> can also be used in conjunction with any command to get more information about that particular functionality. For example, try <code>mean help init</code> to see the options for init
-```bash
-$ mean help [command]
-```
-### Users
-
- <p>Information can be display for a specific customer via <code>mean user email</code>. Email is required. User roles can be assigned or removed with the <code>--addRole (or -a)</code> and <code>--removeRole (or -r)</code> options, respectively.</p>
-  <p>For example, the <i>admin</i> role is required to edit tokens.</p>
-
-```bash
-  $ mean user <email>
-  $ mean user <email> --addRole <role>;
-  $ mean user <email> --removeRole <role>;
-```
-
-### Packages
-#### Management
- <p class="alert alert-warning">All of the remaining of the commands must be run from the root folder of your MEAN application.</p>
-  <p>Contributed MEAN packages can be installed or uninstalled via the CLI. Also, currently installed modules can be viewed with the <code>list</code> command.</p>
-
-```bash
-$ mean list
-$ mean install <module>
-$ mean uninstall <module>
-```
-
-  <p class="alert alert-info">Mean packages installed via the installer are found in <i>/node_modules</i></p>
-#### Search
-To find new packages run the *mean search* command
-```bash
-$ mean search [packagename]
-```
-`mean search` will return all of the available packages, `mean search [packagename]` will filter the search results.
-
-#### Scaffolding
-To create a new MEAN app, run <code>mean init</code>. Name for the application is optional. If no name is provided, "mean" is used. The MEAN project will be cloned from GitHub into a directory of the application name.
-```bash
-$ mean init [name]
-$ cd [name] && npm install
-```
-  <p class="alert alert-info">Note: <a href="http://git-scm.com/downloads">git</a> must be installed for this command to work properly.</p>
-
-### Misc
-<h4>Status</h4>
-<p>Check the database connection for a particular environment (e.g. development (default), test, production) and make sure that the meanio command line version is up to date.</p>
-```bash
-$ mean status
-```
-<h4>Docs</h4>
-<p>A simple shortcut to open the MEAN documentation in your default browser.</p>
-```bash
-$ mean docs
 ```
 
 ## Packages
@@ -526,35 +377,6 @@ $ mean uninstall myPackage
 ```
 Where "myPackage" is the name of your package.
 
-
-### Contributing your package
-Once your package is in good shape and you want to share it with the world you can start the process of contributing it and submitting it so it can be included in the package repository.
-To contribute your package register to the network (see the section below) and run
-
-```bash
-$ mean register # register to the MEAN network (see below)
-$ cd <packages/custom/pkgName>
-$ mean publish
-```
-
-## MEAN Network
-Mean is a stand-alone instance that you can install locally or host on your server.
-We want to provide value to developers and are assembling a set of services which will be called the MEAN network.
-We're building all of this as we speak but we already have some elements in place.
-
-### Network User Management
-
-#### Registration
-```bash
-$ mean register
-```
-#### Identity
-```bash
-$ mean whoami
-```
-### Deploy
-Coming soon!
-
 ## Config
 All the configuration is specified in the [config](/config/) folder,
 through the [env](config/env/) files, and is orchestrated through the [meanio](https://github.com/linnovate/meanio) NPM module.
@@ -663,58 +485,7 @@ To do so all you need to do is the following steps.
 1. You can add remote command using the --remote flag for instance to add a role to a user on the remote cloud instance run `mean user -a RoleName emailAddress --remote`
 1. To get an idea of whats happening on the mean log (node.js based logging) run `mean logs -n 100` to get the last 100 lines...
 
-### Heroku
-Before you start make sure you have the [Heroku toolbelt](https://toolbelt.heroku.com/)
-installed and an accessible MongoDB instance - you can try [MongoHQ](https://www.compose.io/)
-which has an easy setup).
-
-Add the db string to the production env in *server/config/env/production.js*.
-
-Create heroku app (if needed)
-```bash
-$ git init
-$ git add .
-$ git commit -m "initial version"
-
-$ heroku apps:create
-```
-
-If you get missing module errors, install missing dependencies
-```
-npm i -S ms kerberos
-npm update --save
-git commit -m "save versions to package.json"
-```
-
-Push to heroku and configure
-```
-$ git push heroku master
-$ heroku config:set NODE_MODULES_CACHE=false
-$ heroku config:set NODE_ENV=production
-$ heroku config:set CPU_COUNT=2
-```
-You can adjust the CPU_COUNT variable up or down based on how much memory your app is consuming, or leave it unset to fork a process for each CPU.
-
-### OpenShift
-
-1. Register for an account on Openshift (https://www.openshift.com/).
-1. Create an app on Openshift by choosing a 'Node' type site to create. Create the site by making Openshift use Linnovate's Openshift git repo as its source code (https://github.com/linnovate/mean-on-openshift.git).
-1. On the second screen after the new application has been created, add a Mongo database.
-1. When the site has been built, you can visit it on your newly created domain, which will look like my-domain.openshift.com. You may need to restart the instance on Openshift before you can see it. It will look like Mean.io boilerplate.
-1. On your new app's console page on Openshift, make a note of the git repo where the code lives. Clone that repo to your local computer where your mean.io app codebase is.
-1. Merge your completed local app into this new repo. You will have some conflicts, so merge carefully, line by line.
-1. Commit and push the repo with the Openshift code back up to Openshift. Restart your instance on Openshift, you should see your site!
-
-
 ## More Information
   * Visit us at [Linnovate.net](http://www.linnovate.net/).
   * Visit our [Ninja's Zone](http://meanleanstartupmachine.com/) for extended support.
 
-## Credits
-  * To our awesome <a href="https://github.com/orgs/linnovate/teams/mean">core team</a> with help of our <a href="https://github.com/linnovate/mean/graphs/contributors">contributors</a> which have made this project a success.
-  * <a href="https://github.com/vkarpov15">Valeri Karpov</a> for coining the term *mean* and triggering the MEAN stack movement.
-  * <a href="https://github.com/amoshaviv">Amos Haviv</a>  for the creation of the initial version of Mean.io while working for us @linnovate.
-  * <a href="https://github.com/madhums/">Madhusudhan Srinivasa</a> who inspired us with his great work.
-
-## License
-We believe that MEAN should be free and easy to integrate within your existing projects so we chose [The MIT License](http://opensource.org/licenses/MIT)
