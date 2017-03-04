@@ -100,6 +100,6 @@ To do so all you need to do is the following steps.
 1. To get an idea of whats happening on the mean log (node.js based logging) run `mean logs -n 100` to get the last 100 lines...
 
 ## Reference Information
-  * Visit us at [Linnovate.net](http://www.linnovate.net/).
-  * Visit our [Ninja's Zone](http://meanleanstartupmachine.com/) for extended support.
+  * [Linnovate.net](http://www.linnovate.net/).
+  * [Ninja's Zone](http://meanleanstartupmachine.com/)
 
